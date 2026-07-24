@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <header class="hero">
+    <nav class="navbar">
+      <div class="logo">DOM<span>Explorer</span></div>
+      <ul class="nav-links">
+        <li><a href="#concepto">¿Qué es?</a></li>
+        <li><a href="#metodos">Acceso</a></li>
+        <li><a href="#modificacion">Edición</a></li>
+        <li><a href="#nodos">Nodos</a></li>
+        <li><a href="#demostracion">Laboratorio</a></li>
+        <link rel="stylesheet" href="DOM.css">
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Document Object Model (DOM)</h1>
+      <p>La interfaz que conecta tus documentos HTML con la potencia de JavaScript.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <article id="concepto" class="card">
+      <h2>1. ¿Qué es el DOM?</h2>
+      <p>
+        El <strong>DOM (Document Object Model)</strong> Es el elemento fundamental del JavaScript que se ejecuta en el navegador (lado del cliente). Funciona como la puerta de entrada principal a la página web, ofreciendo las propiedades (datos) y métodos (funciones) necesarios para inspeccionar, manipular y controlar todos los elementos que forman parte de la ventana actual.
+      </p>
+      <blockquote>
+        "El DOM convierte un archivo estático en un conjunto de objetos vivos que reaccionan a las interacciones del usuario."
+      </blockquote>
+    </article>
+
+   <article id="metodos" class="card">
+      <h2>1. Métodos de Selección de Elementos</h2>
+      <div class="grid-2">
+        <div class="info-box">
+          <h3>getElementById('id')</h3>
+          <p>Selecciona un elemento único por su ID.</p>
+        </div>
+        <div class="info-box">
+          <h3>getElementsByTagName('tag')</h3>
+          <p>Devuelve una colección viva (HTMLCollection) de etiquetas.</p>
+        </div>
+        <div class="info-box">
+          <h3>getElementsByName('nombre')</h3>
+          <p>Devuelve una NodeList de elementos con el atributo <code>name</code> especificado.</p>
+        </div>
+      </div>
+    </article>
+
+    <article id="modificacion" class="card">
+      <h2>2. Modificación de Contenido y Atributos</h2>
+      <div class="grid-2">
+        <div class="info-box">
+          <h3>innerHTML</h3>
+          <p>Obtiene o reemplaza todo el contenido HTML (incluidas etiquetas) dentro de un elemento.</p>
+        </div>
+        <div class="info-box">
+          <h3>setAttribute('atributo', 'valor')</h3>
+          <p>Establece o actualiza el valor de un atributo HTML (ej. <code>class</code>, <code>src</code>, <code>disabled</code>).</p>
+        </div>
+      </div>
+    </article>
+
+    <article id="nodos" class="card">
+      <h2>3. Jerarquía y Navegación de Nodos</h2>
+      <div class="grid-2">
+        <div class="info-box">
+          <h3>parentNode / childNodes</h3>
+          <p>Accede al padre o a la lista completa de nodos hijos.</p>
+        </div>
+        <div class="info-box">
+          <h3>firstChild / lastChild</h3>
+          <p>Obtiene el primer y último nodo hijo.</p>
+        </div>
+        <div class="info-box">
+          <h3>previousSibling / nextSibling</h3>
+          <p>Accede al nodo hermano anterior o posterior.</p>
+        </div>
+      </div>
+    </article>
+
+    <section id="demostracion" class="card interactive-section">
+      <h2>4. Laboratorio Interactivo en Vivo</h2>
+
+      <div class="form-group">
+        <h3>Formulario de Prueba (name="usuario_dato"):</h3>
+        <div class="inputs-inline">
+          <input type="text" name="usuario_dato" value="Ana" class="input-field" placeholder="Nombre">
+          <input type="text" name="usuario_dato" value="García" class="input-field" placeholder="Apellido">
+          <input type="text" name="usuario_dato" value="25 años" class="input-field" placeholder="Edad">
+        </div>
+      </div>
+
+      <h3>Controles de Selección y Edición:</h3>
+      <div class="controls">
+        <button id="btn-get-id" class="btn primary">🎯 getElementById('nodo-objetivo')</button>
+        <button id="btn-get-tag" class="btn secondary">🏷️ getElementsByTagName('li')</button>
+        <button id="btn-get-name" class="btn secondary">📝 getElementsByName('usuario_dato')</button>
+        <button id="btn-inner-html" class="btn success">✏️ Cambiar innerHTML</button>
+        <button id="btn-set-attr" class="btn warning">⚙️ Aplicar setAttribute()</button>
+      </div>
+
+      <h3>Navegación de Nodos:</h3>
+      <div class="controls border-top">
+        <button id="btn-parent" class="btn outline">⬆️ parentNode</button>
+        <button id="btn-children" class="btn outline">⬇️ childNodes</button>
+        <button id="btn-first" class="btn outline">🥇 firstChild</button>
+        <button id="btn-last" class="btn outline">🏁 lastChild</button>
+        <button id="btn-prev" class="btn outline">⬅️ previousSibling</button>
+        <button id="btn-next" class="btn outline">➡️ nextSibling</button>
+        <button id="btn-reset" class="btn danger">🔄 Reiniciar Todo</button>
+      </div>
+      <div id="demo-container" class="output-container">
+        <h3>Lista Contenedora (#lista-padre):</h3>
+        <ul id="lista-padre" class="node-list">
+          <li id="nodo-1" class="node-item">Primer elemento de la lista</li>
+          <li id="nodo-objetivo" class="node-item active-node">Elemento Objetivo (#nodo-objetivo)</li>
+          <li id="nodo-3" class="node-item">Tercer elemento de la lista</li>
+        </ul>
+      </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 - Guía Informativa del DOM. Desarrollado con HTML5 y CSS Semántico.</p>
+  </footer>
+</body>
+</html>
